@@ -1,1 +1,14 @@
-hallo
+Features
+
+ - Login (Emailadresse, PWD)
+ - Registierung
+ - Kalender
+ - Termin hinzufügen
+ - Termin löschen
+ - Erinnerungsemails
+ - Memo
+ - Einladungen verschicken (per Email)
+
+Design
+
+
