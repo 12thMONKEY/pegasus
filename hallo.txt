@@ -3,14 +3,14 @@ Features
  - Login (Emailadresse, PWD)
  - Registierung
  - Kalender
- - Termin hinzufügen
- - Termin löschen
+ - Termin hinzufï¿½gen
+ - Termin lï¿½schen
  - Erinnerungsemails
  - Memo
  - Einladungen verschicken (per Email)
 
 Design
 
- - http://jsfiddle.net/7D4Nz/32/
+ - http://jsfiddle.net/7D4Nz/48/
 
 
