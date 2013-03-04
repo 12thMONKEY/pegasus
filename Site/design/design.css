@@ -1,1 +1,98 @@
 body{margin:0;padding:0;}
+
+* {
+    -moz-box-sizing: border-box;
+}
+
+.fullscreen {
+    position: absolute;
+    top:0; right: 0; bottom: 0; left: 0;
+    background: url('http://th04.deviantart.net/fs71/PRE/f/2011/115/b/2/vintage_beach_3_by_hitwil-d3euxy8.jpg') no-repeat fixed 50% 50%;
+    background-size: cover;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.flipWrapper {
+    height: 300px;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    transition: all 0.3s ease-in;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    border-radius: 4px;
+    transform-style: preserve-3d;
+    z-index: 100
+}
+
+.login {
+    height: 300px;
+    width: 250px;
+    border-radius: 4px;
+    background: url('http://frexpaper.com/wp-content/uploads/2013/02/Metal-texture-2-1024x1024-jpg.jpg') no-repeat scroll 50% 50%;
+    background-size: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), inset -3px -3px 20px rgba(0,0,0,0.4), inset 3px 3px 15px rgba(255,255,255,0.1);
+    padding: 25px;
+    z-index: 10;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.loginBack {
+    display: block;
+    background: url('http://frexpaper.com/wp-content/uploads/2013/02/Metal-texture-2-1024x1024-jpg.jpg') no-repeat scroll 50% 50%;
+    height: 300px;
+    width: 250px;
+    border-radius: 4px;
+    transform: rotateY(-180deg);
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), inset -3px -3px 20px rgba(0,0,0,0.4), inset 3px 3px 15px rgba(255,255,255,0.1);
+}
+
+.flipWrapper.fade {
+    transform: translate(-50%, -50%) rotateY(-100deg);
+}
+
+input[type="text"], input[type="password"] {
+    padding: 0 5px;
+    display: block;
+    width: 200px;
+    height: 30px;
+    font: 12px/30px Verdana, Helvetica, Arial, sans-serif;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.3);
+    margin: 0 0 50px 0;
+    border: 1px rgba(0,0,0,0.4) solid;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.61);
+}
+
+input[type="submit"] {
+    float: right;
+    background: #333;
+    border-radius: 4px;
+    border: 1px rgba(0,0,0,0.4) solid;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.4), 0 5px 0 rgba(0,0,0,0.61);
+    color: #ccc;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    display: block;
+}
+
+.hole {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    border-radius: 4px;
+    background: url('http://3d.diehlsworld.de/tex_metal/st_brushed0.jpg') repeat;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    box-shadow: 0 0 65px #000 inset, 0 0 1px rgba(255,255,255,0.8);
+}
