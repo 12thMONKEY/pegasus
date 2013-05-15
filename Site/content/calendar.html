@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+ <title>Hier ein Versuch einen Kalender zu schreiben</title>
+ <style type="text/css">
+  body{margin:0;padding:0;}
+
+  #day{
+   height:       20px;
+   width:        20px;
+   background:   lightgrey;
+   float:        left;
+   margin:       2px;
+   border:       1px black solid;
+   text-align:   center;
+  }
+
+  #month{
+   margin:       1px;
+   height:       130px;
+   width:        182px;
+   overflow:     auto;
+   border:       1px black solid;
+  }
+
+  #year{
+   margin:       1px;
+   height:       558px;
+   width:        744px;
+   border:       1px black solid;
+  }
+
+ </style>
+ <script  src="http://code.jquery.com/jquery-latest.pack.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ <!--
+  $(document).ready(function () {
+           var i = 0;
+           var j = 0;
+           var counter = 31;
+           for (i;i<counter;i)
+           {
+                 for(j;(j<7)&&(i<counter);j++)
+                 {
+                         i++;
+                         $('#month').append('<div id="day">'+ i +'</div>');
+
+                 }
+                 $('#month').append('<br>');
+                 j = 0;
+           }
+
+           var today = new Date();
+           var year = today.getYear();
+           var korryear = ( year >= 2000 ) ? year : ( ( year < 80 ) ? year + 2000 : year + 1900);
+           var dayarray = new Array("Sunday","Monday","Thuesday","Wednesday","Thursday","Friday","Saturday");
+           var wday = dayarray[(today.getDay()+1)];
+           var cday = today.getDate();
+           var montharray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+           var month = montharray[(today.getMonth())];
+           alert (wday + ' the ' + cday + ' of ' + month + ' ' + korryear);
+  });
+
+ -->
+ </script>
+
+</head>
+<body>
+<div id="year">
+ <div id="month"></div>
+ </div>
+
+
+</body>
+</html>
