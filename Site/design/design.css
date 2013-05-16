@@ -27,7 +27,8 @@ body{margin:0;padding:0;}
     z-index: 100
 }
 
-.login {
+.login,
+.register {
     height: 300px;
     width: 250px;
     border-radius: 4px;
@@ -69,6 +70,7 @@ input[type="text"], input[type="password"] {
     margin: 0 0 50px 0;
     border: 1px rgba(0,0,0,0.4) solid;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.61);
+    color: #FFF;
 }
 
 input[type="submit"] {
@@ -95,4 +97,8 @@ input[type="submit"] {
     left: 50%;
     z-index: 10;
     box-shadow: 0 0 65px #000 inset, 0 0 1px rgba(255,255,255,0.8);
+}
+
+.register {
+    display: none;
 }
