@@ -2,7 +2,8 @@ var PGS = {
     login: function(action, email, password) {
          password = MD5(password);
          $.post(action, {email: email, password: password}, function(data) {
-               alert(data);
+               $('.fullscreen').remove();
+               $('body').html(data);
          });
     },
 
@@ -15,7 +16,7 @@ var PGS = {
 }
 
 $(document).ready(function() {
-    $('.loginButton').click( function(){
+    $('.loginButton').on('click', function(){
        $('.flipWrapper').addClass('fade');
 
        var action = $('#login').attr('action');
@@ -27,7 +28,7 @@ $(document).ready(function() {
        return false;
     });
 
-    $('.registerButton').click( function(){
+    $('.registerButton').on('click', function(){
        //$('.flipWrapper').addClass('fade');
 
        var action = $('#register').attr('action');
@@ -39,23 +40,24 @@ $(document).ready(function() {
        return false;
     });
 
-    $('.logout').click( function(){
-      
+    $(document).on('click', '.logout', function(){
+
        $.post('utils/logout.php', function(data) {
-         alert(data);
+                 $('.testDIV').remove();
+                 $('body').html(data);
        });
 
        return false;
     });
 
-    $('.registerLink').click( function() {
+    $('.registerLink').on('click', function() {
        $('#login').hide();
        $('#register').show();
 
        return false;
     });
 
-    $('.backLink').click( function() {
+    $('.backLink').on('click', function() {
        $('#login').show();
        $('#register').hide();
 

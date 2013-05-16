@@ -13,5 +13,5 @@ if ($result) {
          echo "An error occured, please try it again!";
 }
 
-mysql_close();
+mysql_close($link);
 ?>

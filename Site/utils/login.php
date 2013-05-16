@@ -14,13 +14,14 @@ if ($row['password'] == $password)
 
          $_SESSION['login'] = 1;
 
-         echo "Login valid";
-         echo "Hallo ".$row['first_name'];
+         $_SESSION['user_ID'] = $row['user_ID'];
+
+         include('../content/user_interface.php');
 }
 else
 {
          echo "Login invalid";
 }
 
-mysql_close();
+mysql_close($link);
 ?>

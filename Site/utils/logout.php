@@ -3,5 +3,7 @@
 require("connect_db.php");
 
   session_destroy();
-  echo 'Logged out';
+  include('../content/login_screen.php');
+
+  mysql_close($link);
 ?>
