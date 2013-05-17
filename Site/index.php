@@ -1,11 +1,14 @@
 <?php
-         require 'utils/connect_db.php';
+         require_once('utils/connect_db.php');
 
          if (!isset($_SESSION['date'])) {
              $timestamp = time();
              $_SESSION['date'] = date('H:i:s', $timestamp);
-             $_SESSION['login'] = 0;
          }
+		 
+		 if (!isset($_SESSION)) {
+             $_SESSION['login'] = 0;
+		 }
 ?>
 
 <!doctype html>

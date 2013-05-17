@@ -6,7 +6,14 @@ var PGS = {
                $('body').html(data);
          });
     },
+	logout: function() {
+		
+       $.post('utils/logout.php', function(data) {
+                 $('.testDIV').remove();
+                 $('body').html(data);
+       });
 
+	},
     register: function(action, email, password) {
          password = MD5(password);
          $.post(action, {email: email, password: password}, function(data) {
@@ -16,7 +23,7 @@ var PGS = {
 }
 
 $(document).ready(function() {
-    $('.loginButton').on('click', function(){
+    $(document).on('click', '.loginButton', function(){
        $('.flipWrapper').addClass('fade');
 
        var action = $('#login').attr('action');
@@ -28,7 +35,7 @@ $(document).ready(function() {
        return false;
     });
 
-    $('.registerButton').on('click', function(){
+    $(document).on('click', '.registerButton', function(){
        //$('.flipWrapper').addClass('fade');
 
        var action = $('#register').attr('action');
@@ -41,23 +48,18 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.logout', function(){
-
-       $.post('utils/logout.php', function(data) {
-                 $('.testDIV').remove();
-                 $('body').html(data);
-       });
-
-       return false;
+		PGS.logout();
+		return false;
     });
 
-    $('.registerLink').on('click', function() {
+    $(document).on('click', '.registerLink', function() {
        $('#login').hide();
        $('#register').show();
 
        return false;
     });
 
-    $('.backLink').on('click', function() {
+    $(document).on('click', '.backLink', function() {
        $('#login').show();
        $('#register').hide();
 

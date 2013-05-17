@@ -1,5 +1,5 @@
 <?php
-require("connect_db.php");
+require_once("connect_db.php");
 $email = mysql_real_escape_string($_REQUEST['email']);
 $password = mysql_real_escape_string($_REQUEST['password']);
 
