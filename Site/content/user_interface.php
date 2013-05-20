@@ -1,6 +1,7 @@
 <?php
 	
-	#So that the path works in every environment + from every file that includes the file
+	# So that the path works in every environment + from every file that includes the file
+	# Calculates the absolute path
 	define('__ROOT__', dirname(dirname(__FILE__)));
 	require_once(__ROOT__.'/utils/connect_db.php'); 
 	
@@ -18,7 +19,7 @@
      	echo $first_name.' '.$last_name;
      
          if ($_SESSION['login'] == 1) {
-         	echo '<br><a href="#" class="logout">Logout biiitch!</a>';
+         	echo '<br><a href="#" class="logout">Logout!</a>';
          }
      ?>
 </div>
