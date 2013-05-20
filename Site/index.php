@@ -15,6 +15,7 @@ if (!isset($_SESSION['login'])) {
 
 <html>
 	<head>
+		
 		<title>Pegasus</title>
 		<link rel="stylesheet" href="design/design.css" type="text/css">
 		<script src="http://code.jquery.com/jquery-latest.pack.js" type="text/javascript"></script>

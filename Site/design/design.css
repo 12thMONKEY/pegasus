@@ -8,6 +8,7 @@
 
 body {
 	overflow: hidden;
+	font: 14px/18px Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 
 .PGS_wrapper {
@@ -124,4 +125,57 @@ input[type="submit"] {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+.pageHeader {
+	width: 100%;
+	height: 50px;
+	position: relative;
+	background: grey;
+}
+
+	.profileLink {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 50px;
+		overflow: hidden;
+		background: transparent;
+		color: #333;
+	}
+	
+	.profileLink:hover {
+		background: #333;
+		color: lightgrey;
+	}
+	
+	.profileLink img {
+		display: block;
+		height: 50px;
+		width: 50px;
+		float: left;
+	}
+	
+	.userName {
+		display: block;
+		float: left;
+		line-height: 50px;
+		height: 50px;
+		padding: 0 10px;
+	}
+
+.pageSidebar {
+	width: 200px;
+	height: calc(100% - 50px);
+	position: relative;
+	float: left;
+	background: lightgrey;
+}
+
+.pageContent {
+	height: calc(100% - 50px);
+	width: calc(100% - 200px);
+	float: left;
+	position: relative;
 }
