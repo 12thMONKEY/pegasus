@@ -1,16 +1,30 @@
-body{margin:0;padding:0;}
-
 * {
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+.PGS_wrapper {
+	overflow: hidden;
+	position: relative;
 }
 
 .fullscreen {
-    position: absolute;
-    top:0; right: 0; bottom: 0; left: 0;
     background: url('http://th04.deviantart.net/fs71/PRE/f/2011/115/b/2/vintage_beach_3_by_hitwil-d3euxy8.jpg') no-repeat fixed 50% 50%;
     background-size: cover;
     perspective: 1000px;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .flipWrapper {
@@ -101,4 +115,13 @@ input[type="submit"] {
 
 .register {
     display: none;
+}
+
+.mainContent {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }

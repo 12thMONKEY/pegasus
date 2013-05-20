@@ -13,7 +13,7 @@
 	$first_name = $row['first_name'];
 	$last_name = $row['last_name'];
 ?>
-<div class="testDIV">
+<div class="mainContent">
    Hallo 
      <?php
      	echo $first_name.' '.$last_name;

@@ -1,68 +1,111 @@
-var PGS = {
-    login: function(action, email, password) {
-         password = MD5(password);
-         $.post(action, {email: email, password: password}, function(data) {
-               $('.fullscreen').remove();
-               $('body').html(data);
-         });
-    },
-	logout: function() {
-		
-       $.post('utils/logout.php', function(data) {
-                 $('.testDIV').remove();
-                 $('body').html(data);
-       });
+// important so the variable scope is not window
+(function() {
+	// defining some global vars
+	var windowheight, windowwidth;
 
-	},
-    register: function(action, email, password) {
-         password = MD5(password);
-         $.post(action, {email: email, password: password}, function(data) {
-               alert(data);
-         });
-    }
-}
+	// start of the PGS mini-framework
+	var PGS = {
+		// Getting the whole thing off!
+		init : function() {
+			this.resize();
+		},
+		// Handling the resize-event
+		// Has its own function for more clearness
+		resize : function() {
+			$(window).resize(function() {
+				PGS.dimensions();
+			}).resize();
+		},
+		// Handling the resizing stuff
+		// Gets called on every resize-event
+		dimensions : function() {
+			windowheight = $(window).height();
+			windowwidth = $(window).width();
+			
+			$('.PGS_wrapper').css({'width': windowwidth, 'height': windowheight});
+		},
+		login : function(action, email, password) {
+			password = MD5(password);
+			$.post(action, {
+				email : email,
+				password : password
+			}, function(data) {
+				$('.PGS_wrapper').append(data);
+				$('.mainContent').hide();
+				$('.fullscreen').fadeOut(500, function() {
+					$(this).remove();
+				});
+				$('.mainContent').fadeIn(500);
+			});
+		},
+		logout : function() {
 
-$(document).ready(function() {
-    $(document).on('click', '.loginButton', function(){
-       $('.flipWrapper').addClass('fade');
+			$.post('utils/logout.php', function(data) {
+				$('.PGS_wrapper').append(data);
+				$('.fullscreen').hide();
+				$('.mainContent').fadeOut(500, function() {
+					$(this).remove();
+				});
+				$('.fullscreen').fadeIn(500);
+			});
 
-       var action = $('#login').attr('action');
-       var email = $('#email').val();
-       var password = $('#password').val();
+		},
+		register : function(action, email, password) {
+			password = MD5(password);
+			$.post(action, {
+				email : email,
+				password : password
+			}, function(data) {
+				alert(data);
+			});
+		}
+	}
 
-       PGS.login(action, email, password);
+	$(document).ready(function() {
+		PGS.init();
 
-       return false;
-    });
+		$(document).on('click', '.loginButton', function() {
+			$('.flipWrapper').addClass('fade');
 
-    $(document).on('click', '.registerButton', function(){
-       //$('.flipWrapper').addClass('fade');
+			var action = $('#login').attr('action');
+			var email = $('#email').val();
+			var password = $('#password').val();
 
-       var action = $('#register').attr('action');
-       var email = $('#reg_email').val();
-       var password = $('#reg_password').val();
+			PGS.login(action, email, password);
 
-       PGS.register(action, email, password);
+			return false;
+		});
 
-       return false;
-    });
+		$(document).on('click', '.registerButton', function() {
+			//$('.flipWrapper').addClass('fade');
 
-    $(document).on('click', '.logout', function(){
-		PGS.logout();
-		return false;
-    });
+			var action = $('#register').attr('action');
+			var email = $('#reg_email').val();
+			var password = $('#reg_password').val();
 
-    $(document).on('click', '.registerLink', function() {
-       $('#login').hide();
-       $('#register').show();
+			PGS.register(action, email, password);
 
-       return false;
-    });
+			return false;
+		});
 
-    $(document).on('click', '.backLink', function() {
-       $('#login').show();
-       $('#register').hide();
+		$(document).on('click', '.logout', function() {
+			PGS.logout();
+			return false;
+		});
 
-       return false;
-    });
-});
+		$(document).on('click', '.registerLink', function() {
+			$('#login').hide();
+			$('#register').show();
+
+			return false;
+		});
+
+		$(document).on('click', '.backLink', function() {
+			$('#login').show();
+			$('#register').hide();
+
+			return false;
+		});
+	});
+
+})(); 
