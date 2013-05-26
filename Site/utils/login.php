@@ -8,7 +8,7 @@ $row = mysql_fetch_array($result);
 if ($row['password'] == $password)
 {
 
-         $query = "UPDATE user SET status = 1 WHERE email = '".$email."'";
+         $query = "UPDATE user SET status = 1, counter = 0 WHERE email = '".$email."'";
 
          $update_status = mysql_query($query);
 
@@ -20,7 +20,15 @@ if ($row['password'] == $password)
 }
 else
 {
-         echo "Login invalid";
+         echo "Login invalid for ".$email;
+
+         $pw_counter = $row['counter'];
+         $pw_counter = $pw_counter + 1;
+
+         $query = "UPDATE user SET counter = ".$pw_counter." WHERE email = '".$email."'";
+         $update_status = mysql_query($query);
+
+         echo "<br>Dies ist Ihr ".$pw_counter.". Fehlversuch!";
 }
 
 mysql_close($link);
