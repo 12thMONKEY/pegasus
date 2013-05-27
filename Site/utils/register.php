@@ -1,9 +1,13 @@
 <?php
-require("connect_db.php");
+require_once("connect_db.php");
 $email = mysql_real_escape_string($_REQUEST['email']);
 $password = mysql_real_escape_string($_REQUEST['password']);
+$first_name = "";
+$last_name = "";
+$title = 0;
+$birthday = '2000-02-19';
 
-$query = "INSERT INTO user VALUES (NULL, 'Mustermann', 'Max', 1, '".$email."', '".$password."', '2000-02-19',0,0)";
+$query = "INSERT INTO user VALUES (NULL, '".$last_name."', '".$first_name."', ".$title.", '".$email."', '".$password."', '".$birthday."',0,0)";
 
 $result = mysql_query($query);
 

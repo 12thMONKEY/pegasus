@@ -35,6 +35,10 @@ if($row['counter'] < 5)
 else
 {
         echo "Your account '".$email."' was disabled. Check your emails!";
+        # The following lines send the email. This does not work on localhost.
+        # $subject = "Invalid login at pegasus";
+        # $mailtext = "Dear ".$row['first_name'].", \n \n you had too many invalid logins. Your account was disabled! \n \n Your sincerly \n pegasus project Team";
+        # mail($email, $subject, $mailtext, "From: pegasus_project ");
 }
 
 mysql_close($link);
