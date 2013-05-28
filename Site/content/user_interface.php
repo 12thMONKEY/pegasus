@@ -12,16 +12,26 @@
 	
 	$first_name = $row['first_name'];
 	$last_name = $row['last_name'];
+	$full_name = $first_name . ' ' . $last_name;
 ?>
 <div class="mainContent">
 	<header class="pageHeader">
-		<a href="#" class="profileLink">
-			<?php
-				echo '<img src="http://www.inigral.com/eduweb/images/thumbs/placeholder.gif" alt="Profilbild" height="50" width="50">';
-				echo '<span class="userName">'.$first_name . ' ' . $last_name.'</span>';
-			?>
-		</a>
-		
+		<div class="navAccount">
+			<a href="#" class="profileLink">
+				<?php
+					echo '<img src="http://www.inigral.com/eduweb/images/thumbs/placeholder.gif" alt="Profilbild" height="50" width="50">';
+					echo '<span class="userName">'.$full_name.'</span>';
+				?>
+			</a>
+			<ul class="navAccountMenu">
+				<li>
+					<a href="#" class="profile">Profil</a>	
+				</li>
+				<li>
+					<a href="#" class="logout">Logout</a>	
+				</li>
+			</ul>
+		</div>
 	</header>
 	<nav class="pageSidebar">
 		<ul>
@@ -42,11 +52,8 @@
 	<section class="pageContent">
 		Hallo
 		<?php
-			echo $first_name . ' ' . $last_name;
+			echo $full_name;
 		
-			if ($_SESSION['login'] == 1) {
-				echo '<br><a href="#" class="logout">Logout!</a>';
-			}
 		?>
 	</section>
 	

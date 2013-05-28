@@ -106,6 +106,18 @@
 
 			return false;
 		});
+		
+		$(document).on('click', 'body', function(e) {
+			$('.profileLink').removeClass('active');
+			$('.navAccountMenu').removeClass('visible');
+		});
+		
+		$(document).on('click', '.profileLink', function(e) {
+			$('.navAccountMenu').toggleClass('visible');
+			$(this).toggleClass('active');
+
+			return false;
+		});
 	});
 
 })(); 
