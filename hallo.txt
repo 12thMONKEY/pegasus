@@ -1,4 +1,4 @@
-Features
+﻿Features
 
  - Login (Emailadresse, PWD)
  - Registierung
@@ -9,8 +9,7 @@ Features
  - Memo
  - Einladungen verschicken (per Email)
 
-Design
 
- - http://jsfiddle.net/7D4Nz/48/
+Datenbank
 
-
+ - Date of Register
