@@ -13,3 +13,7 @@
 Datenbank
 
  - Date of Register
+
+Android Application
+
+ - New .css for smartphones
