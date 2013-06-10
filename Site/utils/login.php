@@ -9,15 +9,22 @@ if($row['counter'] < 5)
 {
      if ($row['password'] == $password)
      {
-             $query = "UPDATE user SET status = 1, counter = 0 WHERE email = '".$email."'";
+             if($row['status'] == 0)
+             {
+                   $query = "UPDATE user SET status = 1, counter = 0 WHERE email = '".$email."'";
 
-             $update_status = mysql_query($query);
+                   $update_status = mysql_query($query);
 
-             $_SESSION['login'] = 1;
+                   $_SESSION['login'] = 1;
 
-             $_SESSION['user_ID'] = $row['user_ID'];
+                   $_SESSION['user_ID'] = $row['user_ID'];
 
-             include('../content/user_interface.php');
+                   include('../content/user_interface.php');
+             }
+             else
+             {
+                   echo "Already Logged in!";
+             }
      }
      else
      {

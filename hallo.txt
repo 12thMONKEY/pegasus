@@ -13,6 +13,8 @@
 Datenbank
 
  - Date of Register
+ - Date of last valid login
+
 
 Android Application
 
