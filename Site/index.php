@@ -1,5 +1,5 @@
 <?php
-require_once ('utils/connect_db.php');
+require_once ('utils/functions.php');
 
 if (!isset($_SESSION['date'])) {
         $timestamp = time();
@@ -27,9 +27,9 @@ if (!isset($_SESSION['login'])) {
                         <?php
 
                         if ($_SESSION['login'] == 1) {
-                                include ('content/user_interface.php');
+                                include ('/content/user_interface.php');
                         } else {
-                                include ('content/login_screen.php');
+                                include ('/content/login_screen.php');
                         }
                         ?>
                 </div>

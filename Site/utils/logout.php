@@ -1,6 +1,6 @@
 <?php
 
-require("connect_db.php");
+require_once("functions.php");
 
   $user_ID = $_SESSION['user_ID'];
 

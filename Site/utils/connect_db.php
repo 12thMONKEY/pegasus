@@ -10,7 +10,5 @@
 
   $db_found = mysql_select_db($database);
 
-  if (!isset($_SESSION)) {
-		session_start();
-  }
+  
 ?>

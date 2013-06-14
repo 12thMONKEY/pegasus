@@ -1,5 +1,5 @@
 <?php
-require_once("connect_db.php");
+require_once("functions.php");
 $email = mysql_real_escape_string($_REQUEST['email']);
 $password = mysql_real_escape_string($_REQUEST['password']);
 
@@ -11,7 +11,10 @@ if($row['counter'] < 5)
      {
              if($row['status'] == 0)
              {
-                   $query = "UPDATE user SET status = 1, counter = 0 WHERE email = '".$email."'";
+                   $stamp = time();
+                   $now = date('Y-m-d H:i:s', $stamp);
+
+                   $query = "UPDATE user SET status = 1, counter = 0, last_login = '".$now."' WHERE email = '".$email."'";
 
                    $update_status = mysql_query($query);
 

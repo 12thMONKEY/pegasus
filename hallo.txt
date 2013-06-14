@@ -1,19 +1,20 @@
 ﻿Features
 
- - Login (Emailadresse, PWD)
+ x Login (Emailadresse, PWD)
  - Registierung
  - Kalender
  - Termin hinzuf�gen
  - Termin l�schen
  - Erinnerungsemails
- - Memo
+ - Aufgaben
+ - Personal Chat
  - Einladungen verschicken (per Email)
 
 
 Datenbank
 
- - Date of Register
- - Date of last valid login
+ x Date of Register
+ x Date of last valid login
 
 
 Android Application
