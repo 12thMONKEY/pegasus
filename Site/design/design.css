@@ -7,13 +7,13 @@
 }
 
 body {
-	overflow: hidden;
-	font: 14px/18px Verdana, Geneva, Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        font: 14px/18px Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 
 .PGS_wrapper {
-	overflow: hidden;
-	position: relative;
+        overflow: hidden;
+        position: relative;
 }
 
 .fullscreen {
@@ -24,8 +24,8 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-	top: 0;
-	left: 0;
+        top: 0;
+        left: 0;
 }
 
 .flipWrapper {
@@ -119,111 +119,112 @@ input[type="submit"] {
 }
 
 .mainContent {
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
 }
 
 .pageHeader {
-	width: 100%;
-	height: 50px;
-	position: relative;
-	background: grey;
+        width: 100%;
+        height: 50px;
+        position: relative;
+        background: grey;
 }
-	
-	.navAccount {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	
-		.profileLink {
-			display: block;
-			position: relative;
-			right: 0;
-			top: 0;
-			height: 50px;
-			overflow: hidden;
-			background: transparent;
-			color: #333;
-		}
-		
-		.profileLink:hover,
-		.profileLink.active {
-			background: #333;
-			color: lightgrey;
-		}
-		
-		.profileLink img {
-			display: block;
-			height: 50px;
-			width: 50px;
-			float: left;
-		}
-		
-		.userName {
-			display: block;
-			float: left;
-			line-height: 50px;
-			height: 50px;
-			padding: 0 10px;
-		}
-		
-		.navAccountMenu {
-			background: #333;
-			position: absolute;
-			width: 100%;
-			list-style: none outside none;
-			display: none;
-			z-index: 1000;
-		}
-		
-		.navAccountMenu.visible {
-			display: block;
-		}
-			
-			.navAccountMenu li a {
-				color: #ccc;
-				text-decoration: none;
-				display: block;
-				height: 30px;
-				line-height: 30px;
-				padding: 0 10px;
-			}
-		
+
+        .navAccount {
+                position: absolute;
+                top: 0;
+                right: 0;
+        }
+
+                .profileLink {
+                        display: block;
+                        position: relative;
+                        right: 0;
+                        top: 0;
+                        height: 50px;
+                        overflow: hidden;
+                        background: transparent;
+                        color: #333;
+                }
+
+                .profileLink:hover,
+                .profileLink.active {
+                        background: #333;
+                        color: lightgrey;
+                }
+
+                .profileLink img {
+                        display: block;
+                        height: 50px;
+                        width: 50px;
+                        float: left;
+                }
+
+                .userName {
+                        display: block;
+                        float: left;
+                        line-height: 50px;
+                        height: 50px;
+                        padding: 0 10px;
+                }
+
+                .navAccountMenu {
+                        background: #333;
+                        position: absolute;
+                        width: 100%;
+                        list-style: none outside none;
+                        display: none;
+                        z-index: 1000;
+                }
+
+                .navAccountMenu.visible {
+                        display: block;
+                }
+
+                        .navAccountMenu li a {
+                                color: #ccc;
+                                text-decoration: none;
+                                display: block;
+                                height: 30px;
+                                line-height: 30px;
+                                padding: 0 10px;
+                        }
+
 .pageSidebar {
-	width: 200px;
-	height: calc(100% - 50px);
-	position: relative;
-	float: left;
-	background: lightgrey;
+        width: 200px;
+        height: calc(100% - 50px);
+        position: relative;
+        float: left;
+        background: lightgrey;
 }
 
-	.pageSidebar ul {
-		list-style: none outside none;
-	}
+        .pageSidebar ul {
+                list-style: none outside none;
+        }
 
-	.pageSidebar ul li a {
-		display: block;
-		line-height: 30px;
-		height: 30px;
-		color: #333;
-		text-decoration: none;
-		padding: 0 10px;
-	}
+        .pageSidebar ul li a {
+                display: block;
+                line-height: 30px;
+                height: 30px;
+                color: #333;
+                text-decoration: none;
+                padding: 0 10px;
+        }
 
-	.pageSidebar ul li.active a,
-	.pageSidebar ul li a:hover {
-		background: #333;
-		color: #ccc;
-	}
+        .pageSidebar ul li.active a,
+        .pageSidebar ul li a:hover {
+                background: #333;
+                color: #ccc;
+        }
 
 .pageContent {
-	height: calc(100% - 50px);
-	width: calc(100% - 200px);
-	float: left;
-	position: relative;
+        height: calc(100% - 50px);
+        width: calc(100% - 200px);
+        float: left;
+        position: relative;
+        overflow:auto;
 }
