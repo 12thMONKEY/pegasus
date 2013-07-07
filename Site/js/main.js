@@ -63,13 +63,22 @@
                         $.post(file, function(data) {
                                  $('.pageContent').html(data);
                         });
+                },
+                send_message: function(action, message_text, conversation_ID) {
+                	$.post(action, {
+                		'conversation_ID': conversation_ID, 
+                		'message_text': message_text
+                	}, function(data) {
+                		alert(data);
+                	});
                 }
         }
 
         $(document).ready(function() {
                 PGS.init();
-
-                $(document).on('click', '.loginButton', function() {
+				$document = $(document);
+				
+                $document.on('click', '.loginButton', function() {
                         $('.flipWrapper').addClass('fade');
 
                         var action = $('#login').attr('action');
@@ -81,8 +90,7 @@
                         return false;
                 });
 
-                $(document).on('click', '.registerButton', function() {
-                        //$('.flipWrapper').addClass('fade');
+                $document.on('click', '.registerButton', function() {
 
                         var action = $('#register').attr('action');
                         var email = $('#reg_email').val();
@@ -93,42 +101,51 @@
                         return false;
                 });
 
-                $(document).on('click', '.logout', function() {
+                $document.on('click', '.logout', function() {
                         PGS.logout();
                         return false;
                 });
 
-                $(document).on('click', '.registerLink', function() {
+                $document.on('click', '.registerLink', function() {
                         $('#login').hide();
                         $('#register').show();
 
                         return false;
                 });
 
-                $(document).on('click', '.backLink', function() {
+                $document.on('click', '.backLink', function() {
                         $('#login').show();
                         $('#register').hide();
 
                         return false;
                 });
 
-                $(document).on('click', 'body', function(e) {
+                $document.on('click', 'body', function(e) {
                         $('.profileLink').removeClass('active');
                         $('.navAccountMenu').removeClass('visible');
                 });
 
-                $(document).on('click', '.profileLink', function(e) {
+                $document.on('click', '.profileLink', function(e) {
                         $('.navAccountMenu').toggleClass('visible');
                         $(this).toggleClass('active');
 
                         return false;
                 });
 
-                $(document).on('click', '.pageSidebar a', function() {
+                $document.on('click', 'a[data-change="main"]', function() {
                         var href = $(this).attr('href');
                         PGS.change_pageContent(href);
 
                         return false;
+                });
+                
+                $document.on('submit', '#message_form', function() {
+                	var message_action = $('#message_form').attr('action');
+                	var message_text = $('#message_text').val();
+                	var conversation_ID = $('#conversation_ID').val();
+                	PGS.send_message(message_action, message_text, conversation_ID);
+
+                	return false;
                 });
         });
 

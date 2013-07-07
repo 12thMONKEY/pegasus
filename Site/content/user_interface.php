@@ -33,19 +33,22 @@
         <nav class="pageSidebar">
                 <ul>
                         <li>
-                                <a href="content/user_home.php">Home</a>
+                                <a href="content/user_home.php" data-change="main">Home</a>
                         </li>
                         <li>
-                                <a href="content/user_calendar.php">Termine</a>
+                                <a href="content/user_calendar.php" data-change="main">Termine</a>
                         </li>
                         <li>
-                                <a href="content/user_notice.php">Notizen</a>
+                                <a href="content/user_notice.php" data-change="main">Notizen</a>
                         </li>
                         <li>
-                                <a href="content/user_tasks.php">Aufgaben</a>
+                                <a href="content/user_tasks.php" data-change="main">Aufgaben</a>
                         </li>
                         <li>
-                                <a href="content/user_profile.php">Profil</a>
+                                <a href="content/user_profile.php" data-change="main">Profil</a>
+                        </li>
+                        <li>
+                                <a href="content/user_messages.php" data-change="main">Nachrichten</a>
                         </li>
                 </ul>
         </nav>
