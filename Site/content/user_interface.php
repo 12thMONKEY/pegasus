@@ -10,7 +10,7 @@
         $first_name = $row['first_name'];
         $last_name = $row['last_name'];
         $full_name = $first_name . ' ' . $last_name;
-?>
+?>         
 <div class="mainContent">
         <header class="pageHeader">
                 <div class="navAccount">
