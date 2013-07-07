@@ -9,10 +9,10 @@ if($row['counter'] < 5)
 {
      if ($row['password'] == $password)
      {
-             if($row['status'] == 0)
-             {
-                   $stamp = time();
-                   $now = date('Y-m-d H:i:s', $stamp);
+             #if($row['status'] == 0)
+             #{
+
+                   $now = date('Y-m-d H:i:s');
 
                    $query = "UPDATE user SET status = 1, counter = 0, last_login = '".$now."' WHERE email = '".$email."'";
 
@@ -23,11 +23,11 @@ if($row['counter'] < 5)
                    $_SESSION['user_ID'] = $row['user_ID'];
 
                    include('../content/user_interface.php');
-             }
-             else
-             {
-                   echo "Already Logged in!";
-             }
+             #}
+             #else
+             #{
+                   #echo "Already Logged in!";
+             #}
      }
      else
      {
