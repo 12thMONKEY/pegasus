@@ -7,13 +7,32 @@
 
      $this_month = date('m');
      $this_year = date('Y');
+
+     if(isset($_GET['month'])){
+         if($_GET['month']< 1)
+         {
+                 $this_month = 12;
+                 $this_year = $_GET['year']-1;
+         }
+         else if($_GET['month'] > 12)
+         {
+                 $this_month = 1;
+                 $this_year = $_GET['year']+1;
+         }
+         else
+         {
+                 $this_month = $_GET['month'];
+         }
+     }
+
+
      $montharray = ['Januar','Februar','M&auml;rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
      $dayarray = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
      $firstday = mktime(0,0,0,$this_month,1,$this_year);
      $startMonth = date('w', $firstday);
      $monthlenght = date('t', $firstday);
 
-     $result = mysql_query("     SELECT 'event_ID', start_day, start_time, subject, end_year, end_month, end_day, end_time
+     $result = mysql_query("     SELECT events.event_ID, start_day, start_time, subject, end_year, end_month, end_day, end_time
                                  FROM user , events , user_events_lookup
                                  WHERE user.user_ID = ".$_SESSION['user_ID']."
                                  AND user.user_ID = user_events_lookup.user_ID
@@ -32,12 +51,12 @@
          }
          else
          {
+
                  $x = count($events[$row2['start_day']]);
          }
          $time = $row2['start_time'];
          $timearray = explode(':', $time);
          $start_time = date('H:i', mktime($timearray[0],$timearray[1],0,1,1,1970));
-
          $time = $row2['end_time'];
          $timearray = explode(':', $time);
          $end_time = date('H:i', mktime($timearray[0],$timearray[1],0,1,1,1970));
@@ -53,7 +72,7 @@
                                                  );
      }
 
-     echo '<table border=1 width="100%"><tr height="100px"><td colspan=7 valign="middle" align="center" >'.$montharray[$this_month-1].'</td></tr>';
+     echo '<table border=1 width="100%"><tr height="100px"><td colspan=7 valign="middle" align="center" ><p style="font-size:30px;"><a href="content/user_calendar.php?month='.($this_month-1).'&year='.$this_year.'" style="text-align:left;" data-change="main">&lt;</a>&nbsp;&nbsp;'.$montharray[$this_month-1].' '.$this_year.'&nbsp;&nbsp;<a href="content/user_calendar.php?month='.($this_month+1).'&year='.$this_year.'" style="text-align:right;" data-change="main">&gt;</a></p></td></tr>';
      echo '<tr height="50px">';
      for($k = 0;$k < 7 ; $k++)
      {
@@ -77,7 +96,7 @@
                                          echo $events[$h][$z]['start_time'].' <a href="content/event_details.php?event='.$events[$h][$z]['event_ID'].'" data-change="main">'.$events[$h][$z]['subject'].'</a><br>';
                                  }
                          }
-                         echo '</p></td>';
+                         echo '<a href="content/event_add.php?date='.$h.'.'.$this_month.'.'.$this_year.'" data-change="main">+</a></p></td>';
                  }
                  else
                  {

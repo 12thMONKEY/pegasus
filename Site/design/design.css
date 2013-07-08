@@ -11,6 +11,10 @@ body {
         font: 14px/18px Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 
+a {
+  text-decoration:        none;
+}
+
 .PGS_wrapper {
         overflow: hidden;
         position: relative;

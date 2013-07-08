@@ -63,21 +63,28 @@
                         $.post(file, function(data) {
                                  $('.pageContent').html(data);
                         });
+
                 },
                 send_message: function(action, message_text, conversation_ID) {
-                	$.post(action, {
-                		'conversation_ID': conversation_ID, 
-                		'message_text': message_text
-                	}, function(data) {
-                		alert(data);
-                	});
+                        $.post(action, {
+                                'conversation_ID': conversation_ID,
+                                'message_text': message_text
+                        }, function(data) {
+                                alert(data);
+                        });
                 }
         }
 
         $(document).ready(function() {
                 PGS.init();
-				$document = $(document);
-				
+                                $document = $(document);
+
+                $document.ajaxStart( function() {
+                         console.log('loading...');
+                }).ajaxStop( function() {
+                         console.log('finished!');
+                });
+
                 $document.on('click', '.loginButton', function() {
                         $('.flipWrapper').addClass('fade');
 
@@ -138,14 +145,14 @@
 
                         return false;
                 });
-                
-                $document.on('submit', '#message_form', function() {
-                	var message_action = $('#message_form').attr('action');
-                	var message_text = $('#message_text').val();
-                	var conversation_ID = $('#conversation_ID').val();
-                	PGS.send_message(message_action, message_text, conversation_ID);
 
-                	return false;
+                $document.on('submit', '#message_form', function() {
+                        var message_action = $('#message_form').attr('action');
+                        var message_text = $('#message_text').val();
+                        var conversation_ID = $('#conversation_ID').val();
+                        PGS.send_message(message_action, message_text, conversation_ID);
+
+                        return false;
                 });
         });
 
