@@ -59,7 +59,6 @@ CREATE TABLE IF NOT EXISTS `events` (
   `date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
   `location` text COLLATE utf8_bin NOT NULL,
-<<<<<<< HEAD
   `start_year` int(4) NOT NULL,
   `start_month` int(2) NOT NULL,
   `start_day` int(2) NOT NULL,
@@ -70,8 +69,6 @@ CREATE TABLE IF NOT EXISTS `events` (
   `end_time` time NOT NULL,
 
 
-=======
->>>>>>> 43861c81ba08e450f81c4db30b48d5246eba3b92
   PRIMARY KEY (`event_ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
