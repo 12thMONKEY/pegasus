@@ -43,7 +43,7 @@
                          );
 
      while ($row2 = mysql_fetch_assoc($result)) {
-
+     
          $x = 0;
          if(!isset ($events[$row2['start_day']][$x]))
          {

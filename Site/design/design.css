@@ -78,7 +78,7 @@ a {
     transform: translate(-50%, -50%) rotateY(-100deg);
 }
 
-input[type="text"], input[type="password"] {
+#login input[type="text"],#login input[type="password"] {
     padding: 0 5px;
     display: block;
     width: 200px;

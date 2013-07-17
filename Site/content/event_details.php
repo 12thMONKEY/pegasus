@@ -9,7 +9,7 @@
 
      $result = mysql_query("     SELECT *
                                  FROM events
-                                 WHERE event_ID = ".$event_ID
+                                 WHERE event_ID = $event_ID"
                          );
      $row2 = mysql_fetch_array($result);
 
@@ -18,6 +18,7 @@
      echo 'Von: '.$row2['start_day'].'.'.$row2['start_month'].'.'.$row2['start_year'].' '.$row2['start_time']."&nbsp;&nbsp;&nbsp;&nbsp;";
      echo 'Bis: '.$row2['end_day'].'.'.$row2['end_month'].'.'.$row2['end_year'].' '.$row2['end_time']."<br>";
      echo 'Location: '.$row2['location']."<br><br>";
-
+	 echo "<a href='content/event_change.php?event=$event_ID' data-change='main'>Bearbeiten</a><br>";
+	 echo "<a href='content/event_invite.php?event=$event_ID' data-change='main'>Freunde einladen</a>";
 
 ?>

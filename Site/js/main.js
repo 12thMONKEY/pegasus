@@ -72,6 +72,36 @@
                         }, function(data) {
                                 alert(data);
                         });
+                },
+                
+                events: {
+                	add: function(action, date, subject, describtion, location, s_day, s_month, s_year, s_hour, s_minute, e_day, e_month, e_year, e_hour, e_minute) {
+                		$.post(action, {
+                			'date': date,
+                			'subject': subject,
+                			'describtion': describtion,
+                			'location': location,
+                			's_day': s_day,
+                			's_month': s_month,
+                			's_year': s_year, 
+                			's_hour': s_hour, 
+                			's_minute': s_minute,
+                			'e_day':  e_day,
+                			'e_month':  e_month,
+                			'e_year':  e_year,
+                			'e_hour':  e_hour,
+                			'e_minute':  e_minute
+                		}, function(data) {                			
+                				$('.pageContent').html(data);
+                		});
+                		
+                	},
+                	invite: function(action) {
+                		$.post(action, function(data) {
+                				$('.pageContent').html(data);
+                		});
+                	}
+                	
                 }
         }
 
@@ -119,7 +149,7 @@
 
                         return false;
                 });
-
+                
                 $document.on('click', '.backLink', function() {
                         $('#login').show();
                         $('#register').hide();
@@ -153,6 +183,44 @@
                         PGS.send_message(message_action, message_text, conversation_ID);
 
                         return false;
+                });
+                
+                $document.on('submit', '#add_event_form', function() {
+
+                		var add_action = $('#add_event_form').attr('action');
+                		var add_date = $('#add_event_date').val();
+                		var add_subject = $('#add_event_subject').val();
+                		var add_describtion = $('#add_event_describtion').val();
+                		var add_location = $('#add_event_location').val();
+                		var add_s_day = $('#add_event_start_day').val();
+                		var add_s_month = $('#add_event_start_month').val();
+                		var add_s_year = $('#add_event_start_year').val();
+                		var add_s_hour = $('#add_event_start_hour').val();
+                		var add_s_minute = $('#add_event_start_minute').val();
+                		var add_e_day = $('#add_event_end_day').val();
+                		var add_e_month = $('#add_event_end_month').val();
+                		var add_e_year = $('#add_event_end_year').val();
+                		var add_e_hour = $('#add_event_end_hour').val();
+                		var add_e_minute = $('#add_event_end_minute').val();
+                		           		
+                		PGS.events.add(add_action, add_date, add_subject, add_describtion, add_location, add_s_day, add_s_month, add_s_year, add_s_minute, add_s_minute, add_e_day, add_e_month, add_e_year, add_e_minute, add_e_minute);
+                		
+                		return false;                	
+                });
+                
+                $document.on('submit', '#invite_friends_form', function() {
+                		
+                		var invited_friends = [];
+                		var invite_action = $('#invite_friends_form').attr('action');
+                		$('#invited_friends:checked').each( function() {          			
+                							invited_friends.push($(this).val());               			                						
+                						});
+                						
+                		console.log(invited_friends);
+                		
+                		PGS.events.invite(invite_action);
+                		
+                		return false;
                 });
         });
 
