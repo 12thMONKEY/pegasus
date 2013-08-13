@@ -74,6 +74,14 @@
                         });
                 },
                 
+                submit_form: function(action, string) {
+                		$.post(action, string, 
+                			function(data) {alert(data)
+                			});
+                	
+                },
+                
+                
                 events: {
                 	add: function(action, date, subject, describtion, location, s_day, s_month, s_year, s_hour, s_minute, e_day, e_month, e_year, e_hour, e_minute) {
                 		$.post(action, {
@@ -176,7 +184,7 @@
                         return false;
                 });
 
-                $document.on('submit', '#message_form', function() {
+                /* $document.on('submit', '#message_form', function() {
                         var message_action = $('#message_form').attr('action');
                         var message_text = $('#message_text').val();
                         var conversation_ID = $('#conversation_ID').val();
@@ -221,7 +229,20 @@
                 		PGS.events.invite(invite_action);
                 		
                 		return false;
-                });
+                });*/
+               
+               $document.on('submit', 'form', function() {
+               			
+               			var action = $(this).attr('action');
+               			var string = $(this).serialize();
+               			
+               			PGS.submit_form(action, string);
+               	
+               			return false;
+               	
+               });
+                
+                
         });
 
 })();

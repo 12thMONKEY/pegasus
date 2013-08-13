@@ -65,17 +65,17 @@
          Betreff: <br><input type="text" name="subject" id="add_event_subject"><br><br>
          Beschreibung: <br><textarea name="describtion" id="add_event_describtion"></textarea><br><br>
          Ort: <br><textarea name="location" id="add_event_location"></textarea><br>
-         Beginn: <br>		<input type="text" name="start_day" id="add_event_start_day" maxlength="2" value="<?=$this_day?>" size="2">:
-         					<input type="text" name="start_month" id="add_event_start_month" maxlength="2" value="<?=$this_month?>" size="2">:
-         					<input type="text" name="start_year" id="add_event_start_year" maxlength="4" value="<?=$this_year?>" size="4">&nbsp;&nbsp;         
-          					<input type="text" name="start_hour" id="add_event_start_hour" maxlength="2" placeholder="hh" size="2">:
-         					<input type="text" name="start_minute" id="add_event_start_minute" maxlength="2" placeholder="mm" size="2"><br>
+         Beginn: <br>		<input type="text" name="s_day" id="add_event_start_day" maxlength="2" value="<?=$this_day?>" size="2">.
+         					<input type="text" name="s_month" id="add_event_start_month" maxlength="2" value="<?=$this_month?>" size="2">.
+         					<input type="text" name="s_year" id="add_event_start_year" maxlength="4" value="<?=$this_year?>" size="4">&nbsp;&nbsp;         
+          					<input type="text" name="s_hour" id="add_event_start_hour" maxlength="2" placeholder="hh" size="2">:
+         					<input type="text" name="s_minute" id="add_event_start_minute" maxlength="2" placeholder="mm" size="2"><br>
          					
-         Ende: <br>			<input type="text" name="end_day" id="add_event_end_day" maxlength="2" value="<?=$this_day?>" size="2">:
-         					<input type="text" name="end_month" id="add_event_end_month" maxlength="2" value="<?=$this_month?>" size="2">:
-         					<input type="text" name="end_year" id="add_event_end_year" maxlength="4" value="<?=$this_year?>" size="4">&nbsp;&nbsp;
-         					<input type="text" name="end_hour" id="add_event_end_hour" maxlength="2" placeholder="hh" size="2">:
-         					<input type="text" name="end_minute" id="add_event_end_minute" maxlength="2" placeholder="mm" size="2"><br><br>
+         Ende: <br>			<input type="text" name="e_day" id="add_event_end_day" maxlength="2" value="<?=$this_day?>" size="2">.
+         					<input type="text" name="e_month" id="add_event_end_month" maxlength="2" value="<?=$this_month?>" size="2">.
+         					<input type="text" name="e_year" id="add_event_end_year" maxlength="4" value="<?=$this_year?>" size="4">&nbsp;&nbsp;
+         					<input type="text" name="e_hour" id="add_event_end_hour" maxlength="2" placeholder="hh" size="2">:
+         					<input type="text" name="e_minute" id="add_event_end_minute" maxlength="2" placeholder="mm" size="2"><br><br>
          					
 		 <button type="submit">Erstellen</button>
          </form>
