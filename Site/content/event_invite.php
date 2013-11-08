@@ -7,14 +7,14 @@
 	 
 	 if(!isset($_POST))
 	 {
-	 	
+	 	echo $_POST['invited_friends'];
 	 }
 	 else if(isset($_GET['event']))
 	 {
 	 
 	 $event_ID = $_GET['event'];
 	 
-	 echo "Hier können Freunde eingeladen werden.<br><br>";
+	 echo "Hier k&ouml;nnen Freunde eingeladen werden.<br><br>";
 	 
 	 $result = select_db("user", "*", ["1"]);
 	 
@@ -22,7 +22,7 @@
 	 while ($row = mysql_fetch_assoc($result)) {
 	 					if(!($_SESSION['user_ID'] == $row['user_ID']))
 						{
-                         	echo '<input type="checkbox" id="invited_friends" value="'.$row['user_ID'].'">  '.$row['first_name'].' '.$row['last_name'].'<br>';
+                         	echo '<input type="checkbox" id="invited_friends" value="'.$row['user_ID'].'" name="invited_friends">  '.$row['first_name'].' '.$row['last_name'].'<br>';
 						}
 	         }
 ?>
