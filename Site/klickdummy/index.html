@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Pegasus Klickdummy</title>
+		
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0 none
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				font: 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+			}
+			
+			.wrapper {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			.app-header {
+				height: 50px;
+				width: 100%;
+				background: #333;
+			}
+			
+			.app-body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			.app-nav-main {
+				width: 199px;
+				background: #ccc;
+				float: left;
+				border-right: 1px #aaa solid;
+			}
+			
+			.app-nav-main-list {
+				list-style: none;
+			}
+			
+			.app-nav-main-list li a {
+				height: 30px;
+				text-decoration: none;
+				color: #333;
+				line-height: 30px;
+				padding: 0 0 0 10px;
+				display: block;
+			}
+			
+			.app-nav-main-list li a:hover {
+				background: #555;
+				color: #ccc;
+			}
+			
+			.app-content-main {
+				height: 100%;
+				width: calc(100% - 200px);
+				float: left;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.app-flyout {
+				height: 100%;
+				width: 300px;
+				background: #efefef;
+				position: absolute;
+				left: -300px;
+			}
+			
+			.flyout-messages-header {
+				background: #bbb;
+				height: 30px;
+				width: 100%;
+			}
+			
+			.messages-list-wrapper {
+				width: 100%;
+				height: calc(100% - 80px);
+				overflow-x: hidden;
+				overflow-y: scroll;
+			}
+			
+			.messages-list {
+				list-style: none;
+			}
+			
+			.message {
+				border-bottom: 1px #555 solid;
+			}
+			
+			.message:last-child {
+				border: 0 none;
+			}
+			
+			.message a {
+				display: block;
+				padding: 10px;
+				text-decoration: none;
+				color: #555;
+			}
+		</style>
+		
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		
+		<script>
+			$(document).ready( function() {
+				var windowHeight, windowWidth
+				
+				var fadeInTimer, fadeOutTimer;
+			
+				$(window).on('resize', function() {
+					windowHeight = $(window).height();
+					windowWidth = $(window).width();
+					
+					$('.wrapper').css({'height': windowHeight, 'width': windowWidth});
+					$('.app-body, .app-nav-main, .app-content-main').css('height', windowHeight);
+				}).resize();
+				
+				$('.app-nav-main-list a[data-flyout="messages"], .app-flyout.messages').hover( function() {
+					clearTimeout(fadeOutTimer);
+					fadeInTimer = setTimeout( function() {
+						$('.app-flyout.messages').stop().animate({'left': 0}, 300);
+					}, 300);	
+				}, function() {
+					clearTimeout(fadeInTimer)
+					fadeOutTimer = setTimeout( function() {
+						$('.app-flyout.messages').stop().animate({'left': '-350px'}, 300);
+					}, 500);
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header class="app-header">
+			
+			</header>
+			<section class="app-body">
+				<nav class="app-nav-main">
+					<ul class="app-nav-main-list">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Termine</a>
+						</li>
+						<li>
+							<a href="#" data-flyout="messages">Nachrichten</a>
+						</li>
+						<li>
+							<a href="#">Aufgaben</a>
+						</li>
+						<li>
+							<a href="#">Notizen</a>
+						</li>
+						<li>
+							<a href="#">Erinnerungen</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="app-content-main">
+					<section class="app-flyout messages">
+						<div class="flyout-messages-header"></div>
+						<div class="messages-list-wrapper">
+							<ul class="messages-list">
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								<li class="message">
+									<a href="#">
+										<div>
+											hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo 
+										</div>
+									</a>
+								</li>
+								
+							</ul>
+						</div>
+					</section>
+				
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

@@ -16,7 +16,7 @@
                 <div class="navAccount">
                         <a href="#" class="profileLink">
                                 <?php
-                                        echo '<img src="http://www.inigral.com/eduweb/images/thumbs/placeholder.gif" alt="Profilbild" height="50" width="50">';
+                                        echo '<img src="http://www.yourplaceyouthcenter.org/wp-content/uploads/2013/07/placeholder-face1.jpg" alt="Profilbild" height="50" width="50">';
                                         echo '<span class="userName">'.$full_name.'</span>';
                                 ?>
                         </a>
@@ -39,6 +39,9 @@
                                 <a href="content/user_calendar.php" data-change="main">Termine</a>
                         </li>
                         <li>
+                                <a href="content/user_messages.php" data-change="main">Nachrichten</a>
+                        </li>
+                        <li>
                                 <a href="content/user_notice.php" data-change="main">Notizen</a>
                         </li>
                         <li>
@@ -46,9 +49,6 @@
                         </li>
                         <li>
                                 <a href="content/user_profile.php" data-change="main">Profil</a>
-                        </li>
-                        <li>
-                                <a href="content/user_messages.php" data-change="main">Nachrichten</a>
                         </li>
                 </ul>
         </nav>
